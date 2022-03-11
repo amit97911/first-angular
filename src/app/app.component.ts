@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { faCoffee, faPhoneSquare, faSpinner, faStar } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'my-first-app';
+
+  constructor(library: FaIconLibrary) {
+    // Add multiple icons to the library
+    library.addIcons(faCoffee, faStar, faSpinner, faPhoneSquare);
+  }
+
 }
